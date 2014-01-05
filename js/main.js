@@ -8,5 +8,18 @@ $(document).ready(function() {
 				scrollTop: newPosition,
 			}, 250);
 		}
-	})
+	});
+
+	$(".cover").each(function() {
+
+		var coverHeight = $(this).outerHeight();
+		var bookHeight = $(this).children("img").height();
+		var pad = (coverHeight - bookHeight)/2;
+
+		$(this).css({
+			"padding-top" : pad + "px"
+		});
+
+	});
+
 });

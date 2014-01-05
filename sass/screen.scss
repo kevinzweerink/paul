@@ -23,7 +23,7 @@ $wide-b : 12px;
 body {
 	border-top: $wide-b solid $blue;
 	font-family: $serif;
-	font-size: 1.3125em;
+	font-size: 1.2em;
 	color: $black;
 	line-height: 1.666666667;
 	background: tint($blue, 98%);
@@ -102,14 +102,14 @@ header {
 	.container:before {
 		content: " ";
 		display: block;
-		width: 5em;
-		height: 5em;
+		width: 6em;
+		height: 6em;
 		background-image: url("../images/paul.jpg");
 		background-repeat: no-repeat;
 		background-position: center;
 		border-radius: 50%;
 		position: absolute;
-		left: -8em;
+		left: -9em;
 	}
 }
 
@@ -134,14 +134,14 @@ header {
 
 	.cover {
 		@include transition(right .2s ease .7s, left .2s ease .7s);
-		display: inline-block;
 		position: absolute;
 		left: -300px;
-		max-width: 300px;
-		vertical-align: middle;
+		max-width: 250px;
+		height: 100%;
+		text-align: right;
 
 		img {
-			max-width: 75%;
+			max-width: 65%;
 			display: inline-block;
 			vertical-align: middle;
 		}
@@ -151,7 +151,7 @@ header {
 		@include transition(right .2s ease .7s, left .2s ease .7s, padding .2s ease, background .2s ease);
 		display: inline-block;
 		position: absolute;
-		right: -300px;
+		right: -100px;
 		top: 40%;
 		padding: 1em 1em .5em;
 	}
@@ -164,11 +164,10 @@ header {
 
 		.buy {
 			@include transition(right .2s ease, left .2s ease, padding .1s ease, background .1s ease);
-			right: 0;
+			right: 150px;
 			
 			&:hover {
-				padding-right: 2em;
-				background: tint($blue, 80%);
+				padding-left: 7em;
 			}
 		}
 	}
@@ -260,7 +259,7 @@ hr {
 	border-bottom: 12px solid $blue;
 }
 
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 1024px) {
 	.container {
 		font-size: 90%;
 		width: 75%;
@@ -290,6 +289,10 @@ hr {
 				font-size: 1em;
 				margin-top: 5em;
 			}
+		}
+
+		nav {
+			font-size: 80%;
 		}
 	}
 

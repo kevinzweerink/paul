@@ -72,7 +72,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 body {
   border-top: 12px solid #5079e2;
   font-family: "pt-serif", georgia, times, serif;
-  font-size: 1.3125em;
+  font-size: 1.2em;
   color: #333333;
   line-height: 1.666666667;
   background: #fbfcfe;
@@ -157,14 +157,14 @@ header nav ul > li:not(:last-of-type):after {
 #about .container:before {
   content: " ";
   display: block;
-  width: 5em;
-  height: 5em;
+  width: 6em;
+  height: 6em;
   background-image: url("../images/paul.jpg");
   background-repeat: no-repeat;
   background-position: center;
   border-radius: 50%;
   position: absolute;
-  left: -8em;
+  left: -9em;
 }
 
 /* line 116, ../sass/screen.scss */
@@ -195,15 +195,15 @@ header nav ul > li:not(:last-of-type):after {
   -moz-transition: right 0.2s ease 0.7s, left 0.2s ease 0.7s;
   -o-transition: right 0.2s ease 0.7s, left 0.2s ease 0.7s;
   transition: right 0.2s ease 0.7s, left 0.2s ease 0.7s;
-  display: inline-block;
   position: absolute;
   left: -300px;
-  max-width: 300px;
-  vertical-align: middle;
+  max-width: 250px;
+  height: 100%;
+  text-align: right;
 }
 /* line 143, ../sass/screen.scss */
 .book-container .cover img {
-  max-width: 75%;
+  max-width: 65%;
   display: inline-block;
   vertical-align: middle;
 }
@@ -216,7 +216,7 @@ header nav ul > li:not(:last-of-type):after {
   transition: right 0.2s ease 0.7s, left 0.2s ease 0.7s, padding 0.2s ease, background 0.2s ease;
   display: inline-block;
   position: absolute;
-  right: -300px;
+  right: -100px;
   top: 40%;
   padding: 1em 1em 0.5em;
 }
@@ -234,58 +234,57 @@ header nav ul > li:not(:last-of-type):after {
   -moz-transition: right 0.2s ease, left 0.2s ease, padding 0.1s ease, background 0.1s ease;
   -o-transition: right 0.2s ease, left 0.2s ease, padding 0.1s ease, background 0.1s ease;
   transition: right 0.2s ease, left 0.2s ease, padding 0.1s ease, background 0.1s ease;
-  right: 0;
+  right: 150px;
 }
 /* line 169, ../sass/screen.scss */
 .book-container:hover .buy:hover {
-  padding-right: 2em;
-  background: #dce4f9;
+  padding-left: 7em;
 }
 
-/* line 177, ../sass/screen.scss */
+/* line 176, ../sass/screen.scss */
 hr {
   border-top: 1px solid #5079e2;
   width: 25%;
   margin: 2em auto;
 }
 
-/* line 183, ../sass/screen.scss */
+/* line 182, ../sass/screen.scss */
 .shorts {
   text-align: center;
   margin-bottom: 3em;
 }
-/* line 186, ../sass/screen.scss */
+/* line 185, ../sass/screen.scss */
 .shorts h3 {
   font-weight: bold;
   margin-bottom: 2em;
 }
-/* line 191, ../sass/screen.scss */
+/* line 190, ../sass/screen.scss */
 .shorts ul {
   text-align: left;
 }
-/* line 194, ../sass/screen.scss */
+/* line 193, ../sass/screen.scss */
 .shorts ul a {
   text-decoration: none;
 }
-/* line 198, ../sass/screen.scss */
+/* line 197, ../sass/screen.scss */
 .shorts ul li {
   display: block;
   border-bottom: 1px solid #5079e2;
   margin-bottom: 1em;
   line-height: 1;
 }
-/* line 205, ../sass/screen.scss */
+/* line 204, ../sass/screen.scss */
 .shorts ul .right-arrow {
   float: right;
 }
 
-/* line 211, ../sass/screen.scss */
+/* line 210, ../sass/screen.scss */
 .section-title {
   border-bottom: 1px solid #5079e2;
   text-align: center;
   margin-bottom: 5em;
 }
-/* line 216, ../sass/screen.scss */
+/* line 215, ../sass/screen.scss */
 .section-title h2 {
   display: inline-block;
   border: 1px solid #5079e2;
@@ -297,20 +296,20 @@ hr {
   background: white;
 }
 
-/* line 228, ../sass/screen.scss */
+/* line 227, ../sass/screen.scss */
 #news {
   text-align: center;
 }
 
-/* line 232, ../sass/screen.scss */
+/* line 231, ../sass/screen.scss */
 .news-item {
   text-align: center;
 }
-/* line 235, ../sass/screen.scss */
+/* line 234, ../sass/screen.scss */
 .news-item h5 {
   font-weight: bold;
 }
-/* line 239, ../sass/screen.scss */
+/* line 238, ../sass/screen.scss */
 .news-item:not(:last-of-type):after {
   content: "\2026";
   display: block;
@@ -321,13 +320,13 @@ hr {
   margin-bottom: .8em;
 }
 
-/* line 250, ../sass/screen.scss */
+/* line 249, ../sass/screen.scss */
 .archive-link {
   display: block;
   margin: 2em 0;
 }
 
-/* line 255, ../sass/screen.scss */
+/* line 254, ../sass/screen.scss */
 .bottom-border {
   height: 3em;
   width: 100%;
@@ -336,37 +335,41 @@ hr {
   border-bottom: 12px solid #5079e2;
 }
 
-@media screen and (max-width: 960px) {
-  /* line 264, ../sass/screen.scss */
+@media screen and (max-width: 1024px) {
+  /* line 263, ../sass/screen.scss */
   .container {
     font-size: 90%;
     width: 75%;
   }
 
-  /* line 269, ../sass/screen.scss */
+  /* line 268, ../sass/screen.scss */
   .book-container .cover, .book-container .buy {
     display: none;
   }
 
-  /* line 275, ../sass/screen.scss */
+  /* line 274, ../sass/screen.scss */
   #about .container:before {
     display: none;
   }
 }
 @media screen and (max-width: 600px) {
-  /* line 282, ../sass/screen.scss */
+  /* line 281, ../sass/screen.scss */
   .container {
     width: 90%;
     font-size: 80%;
   }
 
-  /* line 289, ../sass/screen.scss */
+  /* line 288, ../sass/screen.scss */
   header .name h1 {
     font-size: 1em;
     margin-top: 5em;
   }
+  /* line 294, ../sass/screen.scss */
+  header nav {
+    font-size: 80%;
+  }
 
-  /* line 297, ../sass/screen.scss */
+  /* line 300, ../sass/screen.scss */
   .book-container .cover, .book-container .buy {
     display: none;
   }

@@ -1,0 +1,301 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/reset";
+@import "compass/css3";
+@import "compass/utilities";
+
+// COLORS
+
+$blue : #5079E2;
+$black : #333333;
+$white : #fff;
+$hover : shade($blue, 50%);
+
+$serif : "pt-serif", georgia, times, serif;
+
+$wide-b : 12px;
+
+// STYLIN
+
+body {
+	border-top: $wide-b solid $blue;
+	font-family: $serif;
+	font-size: 1.3125em;
+	color: $black;
+	line-height: 1.666666667;
+	background: tint($blue, 98%);
+}
+
+a {
+	@include transition(color .2s ease);
+	color: $blue;
+
+	&:hover {
+		color: $hover;
+	}
+}
+
+img {
+	max-width: 100%;
+}
+
+header {
+	background: url("../images/tile.png");
+	background-attachment: fixed;
+	text-align: center;
+	border-bottom: 1px solid $blue;
+	margin-bottom: 4em;
+
+	.name {
+		width: 50%;
+		margin: auto;
+		padding: 6em 1em 2em;
+		text-align: center;
+		background: url("../images/monogram.svg");
+		background-position: center 6em;
+		background-repeat: no-repeat;
+
+		h1 {
+			margin-top: 3em;
+			font-size: 1.5em;
+			color: $white;
+			background: $blue;
+			padding: .2em .4em;
+			line-height: 1;
+			display: inline-block;
+		}
+	}
+
+	nav {
+		display: inline-block;
+		padding: .5em 1em;
+		background: $white;
+		border: 1px solid $blue;
+		position: relative;
+		bottom: -1.3em;
+
+		ul > li {
+			display: inline-block;
+			font-weight: bold;
+
+			a {
+				text-decoration: none;
+			}
+
+			&:not(:last-of-type) {
+				&:after {
+					content : "•";
+					padding: 0em 1em;
+					color: $blue;
+				}
+			}
+		}
+	}
+}
+
+#about {
+	margin-bottom: 3em;
+
+	.container:before {
+		content: " ";
+		display: block;
+		width: 5em;
+		height: 5em;
+		background-image: url("../images/paul.jpg");
+		background-repeat: no-repeat;
+		background-position: center;
+		border-radius: 50%;
+		position: absolute;
+		left: -8em;
+	}
+}
+
+.container {
+	width: 50%;
+	margin: auto;
+	position: relative;
+}
+
+.book-container {	
+	overflow: hidden;
+	width: 100%;
+	margin: 5em 0;
+	position: relative;
+
+	h4 {
+		color: $blue;
+		text-transform: uppercase;
+		margin-bottom: 1em;
+		font-weight: bold;
+	}
+
+	.cover {
+		@include transition(right .2s ease .7s, left .2s ease .7s);
+		display: inline-block;
+		position: absolute;
+		left: -300px;
+		max-width: 300px;
+		vertical-align: middle;
+
+		img {
+			max-width: 75%;
+			display: inline-block;
+			vertical-align: middle;
+		}
+	}
+
+	.buy {
+		@include transition(right .2s ease .7s, left .2s ease .7s, padding .2s ease, background .2s ease);
+		display: inline-block;
+		position: absolute;
+		right: -300px;
+		top: 40%;
+		padding: 1em 1em .5em;
+	}
+
+	&:hover {
+		.cover {
+			@include transition(right .2s ease, left .2s ease);
+			left:0;
+		}
+
+		.buy {
+			@include transition(right .2s ease, left .2s ease, padding .1s ease, background .1s ease);
+			right: 0;
+			
+			&:hover {
+				padding-right: 2em;
+				background: tint($blue, 80%);
+			}
+		}
+	}
+}
+
+hr {
+	border-top: 1px solid $blue;
+	width: 25%;
+	margin: 2em auto;
+}
+
+.shorts {
+	text-align: center;
+	margin-bottom: 3em;
+	h3 {
+		font-weight: bold;
+		margin-bottom: 2em;
+	}
+
+	ul {
+		text-align: left;
+
+		a {
+			text-decoration: none;
+		}
+
+		li {
+			display: block;
+			border-bottom: 1px solid $blue;
+			margin-bottom: 1em;
+			line-height: 1;
+		}
+
+		.right-arrow {
+			float: right;
+		}
+	}
+}
+
+.section-title {
+	border-bottom: 1px solid $blue;
+	text-align: center;
+	margin-bottom: 5em;
+
+	h2 {
+		display: inline-block;
+		border: 1px solid $blue;
+		padding: .2em 1em;
+		position: relative;
+		font-weight: bold;
+		bottom: -1em;
+		color: $blue;
+		background: $white;
+	}
+}
+
+#news {
+	text-align: center;
+}
+
+.news-item {
+	text-align: center;
+
+	h5 {
+		font-weight: bold;
+	}
+
+	&:not(:last-of-type):after {
+		content: "\2026";
+		display: block;
+		text-align: center;
+		line-height: 1;
+		font-size: 3em;
+		color: $blue;
+		margin-bottom: .8em;
+	}
+}
+
+.archive-link {
+	display: block;
+	margin: 2em 0;
+}
+
+.bottom-border {
+	height: 3em;
+	width: 100%;
+	background: url("../images/tile.png");
+	background-attachment: fixed;
+	border-bottom: 12px solid $blue;
+}
+
+@media screen and (max-width: 960px) {
+	.container {
+		font-size: 90%;
+		width: 75%;
+	}
+	.book-container {
+		.cover, .buy {
+			display: none;
+		}
+	}
+
+	#about {
+		.container:before {
+			display: none;
+		}
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.container {
+		width: 90%;
+		font-size: 80%;
+	}
+
+	header {
+		.name {
+			h1 {
+				font-size: 1em;
+				margin-top: 5em;
+			}
+		}
+	}
+
+	.book-container {
+		.cover, .buy {
+			display: none;
+		}
+	}
+}

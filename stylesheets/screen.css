@@ -70,73 +70,71 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 /* line 23, ../sass/screen.scss */
 body {
-  border-top: 12px solid #5079e2;
   font-family: "pt-serif", georgia, times, serif;
   font-size: 1.2em;
   color: #333333;
   line-height: 1.666666667;
-  background: #fbfcfe;
+  background: #fcfdfe;
+  border-top: 5px solid #295bcc;
 }
 
-/* line 32, ../sass/screen.scss */
+/* line 33, ../sass/screen.scss */
 a {
   -webkit-transition: color 0.2s ease;
   -moz-transition: color 0.2s ease;
   -o-transition: color 0.2s ease;
   transition: color 0.2s ease;
-  color: #5079e2;
+  color: #295bcc;
 }
-/* line 36, ../sass/screen.scss */
+/* line 37, ../sass/screen.scss */
 a:hover {
-  color: #283c71;
+  color: #142d66;
 }
 
-/* line 41, ../sass/screen.scss */
+/* line 42, ../sass/screen.scss */
 img {
   max-width: 100%;
 }
 
-/* line 45, ../sass/screen.scss */
+/* line 46, ../sass/screen.scss */
 header {
-  background: url("../images/tile.png");
-  background-attachment: fixed;
+  background: white;
   text-align: center;
-  border-bottom: 1px solid #5079e2;
-  margin-bottom: 4em;
 }
-/* line 52, ../sass/screen.scss */
+/* line 50, ../sass/screen.scss */
 header .name {
   width: 50%;
   margin: auto;
-  padding: 6em 1em 2em;
+  padding: 6.3em 1em 1em;
   text-align: center;
   background: url("../images/monogram.svg");
-  background-position: center 6em;
+  background-position: center 4em;
   background-repeat: no-repeat;
 }
-/* line 61, ../sass/screen.scss */
+/* line 59, ../sass/screen.scss */
 header .name h1 {
-  margin-top: 3em;
+  margin-top: 2em;
   font-size: 1.5em;
-  color: white;
-  background: #5079e2;
+  color: #295bcc;
+  font-weight: bold;
   padding: 0.2em 0.4em;
   line-height: 1;
   display: inline-block;
 }
-/* line 72, ../sass/screen.scss */
+/* line 70, ../sass/screen.scss */
 header nav {
-  display: inline-block;
-  padding: 0.5em 1em;
+  display: block;
+  padding: 0.5em 1em 2em;
   background: white;
-  border: 1px solid #5079e2;
   position: relative;
-  bottom: -1.3em;
 }
-/* line 80, ../sass/screen.scss */
+/* line 77, ../sass/screen.scss */
 header nav ul > li {
   display: inline-block;
   font-weight: bold;
+  font-size: .8em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 /* line 84, ../sass/screen.scss */
 header nav ul > li a {
@@ -146,7 +144,7 @@ header nav ul > li a {
 header nav ul > li:not(:last-of-type):after {
   content: "•";
   padding: 0em 1em;
-  color: #5079e2;
+  color: #295bcc;
 }
 
 /* line 99, ../sass/screen.scss */
@@ -154,7 +152,11 @@ header nav ul > li:not(:last-of-type):after {
   margin-bottom: 3em;
 }
 /* line 102, ../sass/screen.scss */
-#about .container:before {
+#about .about-inner:before {
+  -webkit-transition: left 0.2s ease, opacity 0.2s ease;
+  -moz-transition: left 0.2s ease, opacity 0.2s ease;
+  -o-transition: left 0.2s ease, opacity 0.2s ease;
+  transition: left 0.2s ease, opacity 0.2s ease;
   content: " ";
   display: block;
   width: 6em;
@@ -164,212 +166,217 @@ header nav ul > li:not(:last-of-type):after {
   background-position: center;
   border-radius: 50%;
   position: absolute;
+  left: -25em;
+  opacity: 0;
+}
+/* line 117, ../sass/screen.scss */
+#about .in-view.about-inner:before {
   left: -9em;
+  opacity: 1;
 }
 
-/* line 116, ../sass/screen.scss */
+/* line 123, ../sass/screen.scss */
 .container {
   width: 50%;
   margin: auto;
   position: relative;
 }
 
-/* line 122, ../sass/screen.scss */
+/* line 129, ../sass/screen.scss */
 .book-container {
   overflow: hidden;
+  max-width: 100%;
   width: 100%;
   margin: 5em 0;
   position: relative;
 }
-/* line 128, ../sass/screen.scss */
+/* line 137, ../sass/screen.scss */
 .book-container h4 {
-  color: #5079e2;
-  text-transform: uppercase;
+  color: #333333;
   margin-bottom: 1em;
   font-weight: bold;
+  font-size: 1.2em;
 }
-/* line 135, ../sass/screen.scss */
+/* line 145, ../sass/screen.scss */
 .book-container .cover {
-  -webkit-transition: right 0.2s ease, left 0.2s ease;
-  -webkit-transition-delay: 0.7s, 0.7s;
-  -moz-transition: right 0.2s ease 0.7s, left 0.2s ease 0.7s;
-  -o-transition: right 0.2s ease 0.7s, left 0.2s ease 0.7s;
-  transition: right 0.2s ease 0.7s, left 0.2s ease 0.7s;
+  -webkit-transition: right 0.2s ease, left 0.2s ease, opacity 0.2s ease;
+  -webkit-transition-delay: 0.7s, 0.7s, 0.7s;
+  -moz-transition: right 0.2s ease 0.7s, left 0.2s ease 0.7s, opacity 0.2s ease 0.7s;
+  -o-transition: right 0.2s ease 0.7s, left 0.2s ease 0.7s, opacity 0.2s ease 0.7s;
+  transition: right 0.2s ease 0.7s, left 0.2s ease 0.7s, opacity 0.2s ease 0.7s;
   position: absolute;
   left: -300px;
   max-width: 250px;
   height: 100%;
   text-align: right;
+  opacity: 0;
 }
-/* line 143, ../sass/screen.scss */
+/* line 154, ../sass/screen.scss */
 .book-container .cover img {
   max-width: 65%;
   display: inline-block;
   vertical-align: middle;
 }
-/* line 150, ../sass/screen.scss */
+/* line 161, ../sass/screen.scss */
 .book-container .buy {
-  -webkit-transition: right 0.2s ease, left 0.2s ease, padding 0.2s ease, background 0.2s ease;
-  -webkit-transition-delay: 0.7s, 0.7s, 0s, 0s;
-  -moz-transition: right 0.2s ease 0.7s, left 0.2s ease 0.7s, padding 0.2s ease, background 0.2s ease;
-  -o-transition: right 0.2s ease 0.7s, left 0.2s ease 0.7s, padding 0.2s ease, background 0.2s ease;
-  transition: right 0.2s ease 0.7s, left 0.2s ease 0.7s, padding 0.2s ease, background 0.2s ease;
+  -webkit-transition: right 0.2s ease, left 0.2s ease, padding 0.2s ease, background 0.2s ease, opacity 0.2s ease;
+  -webkit-transition-delay: 0.7s, 0.7s, 0s, 0s, 0.7s;
+  -moz-transition: right 0.2s ease 0.7s, left 0.2s ease 0.7s, padding 0.2s ease, background 0.2s ease, opacity 0.2s ease 0.7s;
+  -o-transition: right 0.2s ease 0.7s, left 0.2s ease 0.7s, padding 0.2s ease, background 0.2s ease, opacity 0.2s ease 0.7s;
+  transition: right 0.2s ease 0.7s, left 0.2s ease 0.7s, padding 0.2s ease, background 0.2s ease, opacity 0.2s ease 0.7s;
   display: inline-block;
   position: absolute;
   right: -100px;
   top: 40%;
   padding: 1em 1em 0.5em;
+  opacity: 0;
 }
-/* line 160, ../sass/screen.scss */
-.book-container:hover .cover {
-  -webkit-transition: right 0.2s ease, left 0.2s ease;
-  -moz-transition: right 0.2s ease, left 0.2s ease;
-  -o-transition: right 0.2s ease, left 0.2s ease;
-  transition: right 0.2s ease, left 0.2s ease;
+/* line 172, ../sass/screen.scss */
+.book-container.in-view .cover {
+  -webkit-transition: right 0.2s ease, left 0.2s ease, opacity 0.2s ease;
+  -moz-transition: right 0.2s ease, left 0.2s ease, opacity 0.2s ease;
+  -o-transition: right 0.2s ease, left 0.2s ease, opacity 0.2s ease;
+  transition: right 0.2s ease, left 0.2s ease, opacity 0.2s ease;
   left: 0;
+  opacity: 1;
 }
-/* line 165, ../sass/screen.scss */
-.book-container:hover .buy {
-  -webkit-transition: right 0.2s ease, left 0.2s ease, padding 0.1s ease, background 0.1s ease;
-  -moz-transition: right 0.2s ease, left 0.2s ease, padding 0.1s ease, background 0.1s ease;
-  -o-transition: right 0.2s ease, left 0.2s ease, padding 0.1s ease, background 0.1s ease;
-  transition: right 0.2s ease, left 0.2s ease, padding 0.1s ease, background 0.1s ease;
-  right: 150px;
+/* line 178, ../sass/screen.scss */
+.book-container.in-view .buy {
+  -webkit-transition: right 0.2s ease, left 0.2s ease, padding 0.1s ease, background 0.1s ease, opacity 0.2s ease;
+  -moz-transition: right 0.2s ease, left 0.2s ease, padding 0.1s ease, background 0.1s ease, opacity 0.2s ease;
+  -o-transition: right 0.2s ease, left 0.2s ease, padding 0.1s ease, background 0.1s ease, opacity 0.2s ease;
+  transition: right 0.2s ease, left 0.2s ease, padding 0.1s ease, background 0.1s ease, opacity 0.2s ease;
+  right: 170px;
+  opacity: 1;
 }
-/* line 169, ../sass/screen.scss */
-.book-container:hover .buy:hover {
+/* line 183, ../sass/screen.scss */
+.book-container.in-view .buy:hover {
   padding-left: 7em;
 }
 
-/* line 176, ../sass/screen.scss */
-hr {
-  border-top: 1px solid #5079e2;
-  width: 25%;
-  margin: 2em auto;
-}
-
-/* line 182, ../sass/screen.scss */
+/* line 190, ../sass/screen.scss */
 .shorts {
   text-align: center;
   margin-bottom: 3em;
 }
-/* line 185, ../sass/screen.scss */
+/* line 194, ../sass/screen.scss */
 .shorts h3 {
   font-weight: bold;
   margin-bottom: 2em;
 }
-/* line 190, ../sass/screen.scss */
+/* line 199, ../sass/screen.scss */
 .shorts ul {
   text-align: left;
 }
-/* line 193, ../sass/screen.scss */
+/* line 202, ../sass/screen.scss */
 .shorts ul a {
   text-decoration: none;
 }
-/* line 197, ../sass/screen.scss */
+/* line 206, ../sass/screen.scss */
 .shorts ul li {
   display: block;
-  border-bottom: 1px solid #5079e2;
+  border-bottom: 1px solid #295bcc;
   margin-bottom: 1em;
   line-height: 1;
 }
-/* line 204, ../sass/screen.scss */
+/* line 213, ../sass/screen.scss */
 .shorts ul .right-arrow {
   float: right;
 }
 
-/* line 210, ../sass/screen.scss */
+/* line 219, ../sass/screen.scss */
 .section-title {
-  border-bottom: 1px solid #5079e2;
+  border-bottom: 1px dotted #295bcc;
   text-align: center;
   margin-bottom: 5em;
 }
-/* line 215, ../sass/screen.scss */
+/* line 224, ../sass/screen.scss */
 .section-title h2 {
   display: inline-block;
-  border: 1px solid #5079e2;
+  border: 1px solid #295bcc;
   padding: 0.2em 1em;
   position: relative;
   font-weight: bold;
   bottom: -1em;
-  color: #5079e2;
+  color: #295bcc;
+  font-size: .8em;
   background: white;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
-/* line 227, ../sass/screen.scss */
+/* line 239, ../sass/screen.scss */
 #news {
   text-align: center;
 }
 
-/* line 231, ../sass/screen.scss */
+/* line 243, ../sass/screen.scss */
 .news-item {
   text-align: center;
 }
-/* line 234, ../sass/screen.scss */
+/* line 246, ../sass/screen.scss */
 .news-item h5 {
   font-weight: bold;
 }
-/* line 238, ../sass/screen.scss */
+/* line 250, ../sass/screen.scss */
 .news-item:not(:last-of-type):after {
   content: "\2026";
   display: block;
   text-align: center;
   line-height: 1;
-  font-size: 3em;
-  color: #5079e2;
+  font-size: 2em;
+  color: #333333;
   margin-bottom: .8em;
 }
 
-/* line 249, ../sass/screen.scss */
+/* line 261, ../sass/screen.scss */
 .archive-link {
   display: block;
   margin: 2em 0;
 }
 
-/* line 254, ../sass/screen.scss */
+/* line 266, ../sass/screen.scss */
 .bottom-border {
   height: 3em;
   width: 100%;
-  background: url("../images/tile.png");
   background-attachment: fixed;
-  border-bottom: 12px solid #5079e2;
 }
 
 @media screen and (max-width: 1024px) {
-  /* line 263, ../sass/screen.scss */
+  /* line 274, ../sass/screen.scss */
   .container {
     font-size: 90%;
     width: 75%;
   }
 
-  /* line 268, ../sass/screen.scss */
+  /* line 279, ../sass/screen.scss */
   .book-container .cover, .book-container .buy {
     display: none;
   }
 
-  /* line 274, ../sass/screen.scss */
+  /* line 285, ../sass/screen.scss */
   #about .container:before {
     display: none;
   }
 }
 @media screen and (max-width: 600px) {
-  /* line 281, ../sass/screen.scss */
+  /* line 292, ../sass/screen.scss */
   .container {
     width: 90%;
     font-size: 80%;
   }
 
-  /* line 288, ../sass/screen.scss */
+  /* line 299, ../sass/screen.scss */
   header .name h1 {
     font-size: 1em;
     margin-top: 5em;
   }
-  /* line 294, ../sass/screen.scss */
+  /* line 305, ../sass/screen.scss */
   header nav {
     font-size: 80%;
   }
 
-  /* line 300, ../sass/screen.scss */
+  /* line 311, ../sass/screen.scss */
   .book-container .cover, .book-container .buy {
     display: none;
   }

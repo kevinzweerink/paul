@@ -22,4 +22,19 @@ $(document).ready(function() {
 
 	});
 
+	$(window).on("scroll", function() {
+		var scrollPos = $(window).scrollTop();
+		var windowHeight = $(window).height() / 1.5;
+		$("[data-inview]").each(function() {
+			var top = $(this).position().top;
+			var bottom = top + $(this).outerHeight();
+
+			if ((scrollPos + windowHeight) - 150 > top && scrollPos < (bottom - 100)) {
+				$(this).addClass("in-view");
+			} else {
+				$(this).removeClass("in-view");
+			}
+		});
+	});
+
 });

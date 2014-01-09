@@ -9,7 +9,7 @@
 
 // COLORS
 
-$blue : #5079E2;
+$blue : #295BCC;
 $black : #333333;
 $white : #fff;
 $hover : shade($blue, 50%);
@@ -21,12 +21,13 @@ $wide-b : 12px;
 // STYLIN
 
 body {
-	border-top: $wide-b solid $blue;
 	font-family: $serif;
 	font-size: 1.2em;
 	color: $black;
 	line-height: 1.666666667;
-	background: tint($blue, 98%);
+	background: tint($blue, 99%);
+
+	border-top: 5px solid $blue;
 }
 
 a {
@@ -43,26 +44,23 @@ img {
 }
 
 header {
-	background: url("../images/tile.png");
-	background-attachment: fixed;
+	background: $white;
 	text-align: center;
-	border-bottom: 1px solid $blue;
-	margin-bottom: 4em;
 
 	.name {
 		width: 50%;
 		margin: auto;
-		padding: 6em 1em 2em;
+		padding: 6.3em 1em 1em;
 		text-align: center;
 		background: url("../images/monogram.svg");
-		background-position: center 6em;
+		background-position: center 4em;
 		background-repeat: no-repeat;
 
 		h1 {
-			margin-top: 3em;
+			margin-top: 2em;
 			font-size: 1.5em;
-			color: $white;
-			background: $blue;
+			color: $blue;
+			font-weight: bold;
 			padding: .2em .4em;
 			line-height: 1;
 			display: inline-block;
@@ -70,16 +68,18 @@ header {
 	}
 
 	nav {
-		display: inline-block;
-		padding: .5em 1em;
+		display: block;
+		padding: .5em 1em 2em;
 		background: $white;
-		border: 1px solid $blue;
+		//border-bottom: 1px solid $blue;
 		position: relative;
-		bottom: -1.3em;
 
 		ul > li {
 			display: inline-block;
 			font-weight: bold;
+			font-size: .8em;
+			text-transform: uppercase;
+			letter-spacing: 2px;
 
 			a {
 				text-decoration: none;
@@ -99,7 +99,8 @@ header {
 #about {
 	margin-bottom: 3em;
 
-	.container:before {
+	.about-inner:before {
+		@include transition(left .2s ease, opacity .2s ease);
 		content: " ";
 		display: block;
 		width: 6em;
@@ -109,7 +110,13 @@ header {
 		background-position: center;
 		border-radius: 50%;
 		position: absolute;
+		left: -25em;
+		opacity: 0;
+	}
+
+	.in-view.about-inner:before {
 		left: -9em;
+		opacity: 1;
 	}
 }
 
@@ -119,26 +126,30 @@ header {
 	position: relative;
 }
 
-.book-container {	
+.book-container {
 	overflow: hidden;
+	max-width: 100%;
 	width: 100%;
 	margin: 5em 0;
 	position: relative;
 
+
 	h4 {
-		color: $blue;
-		text-transform: uppercase;
+		color: $black;
+		//text-transform: uppercase;
 		margin-bottom: 1em;
 		font-weight: bold;
+		font-size: 1.2em;
 	}
 
 	.cover {
-		@include transition(right .2s ease .7s, left .2s ease .7s);
+		@include transition(right .2s ease .7s, left .2s ease .7s, opacity .2s ease .7s);
 		position: absolute;
 		left: -300px;
 		max-width: 250px;
 		height: 100%;
 		text-align: right;
+		opacity: 0;
 
 		img {
 			max-width: 65%;
@@ -148,23 +159,26 @@ header {
 	}
 
 	.buy {
-		@include transition(right .2s ease .7s, left .2s ease .7s, padding .2s ease, background .2s ease);
+		@include transition(right .2s ease .7s, left .2s ease .7s, padding .2s ease, background .2s ease, opacity .2s ease .7s);
 		display: inline-block;
 		position: absolute;
 		right: -100px;
 		top: 40%;
 		padding: 1em 1em .5em;
+		opacity: 0;
 	}
 
-	&:hover {
+	&.in-view {
 		.cover {
-			@include transition(right .2s ease, left .2s ease);
+			@include transition(right .2s ease, left .2s ease, opacity .2s ease);
 			left:0;
+			opacity: 1;
 		}
 
 		.buy {
-			@include transition(right .2s ease, left .2s ease, padding .1s ease, background .1s ease);
-			right: 150px;
+			@include transition(right .2s ease, left .2s ease, padding .1s ease, background .1s ease, opacity .2s ease);
+			right: 170px;
+			opacity: 1;
 			
 			&:hover {
 				padding-left: 7em;
@@ -173,15 +187,10 @@ header {
 	}
 }
 
-hr {
-	border-top: 1px solid $blue;
-	width: 25%;
-	margin: 2em auto;
-}
-
 .shorts {
 	text-align: center;
 	margin-bottom: 3em;
+
 	h3 {
 		font-weight: bold;
 		margin-bottom: 2em;
@@ -208,7 +217,7 @@ hr {
 }
 
 .section-title {
-	border-bottom: 1px solid $blue;
+	border-bottom: 1px dotted $blue;
 	text-align: center;
 	margin-bottom: 5em;
 
@@ -220,7 +229,10 @@ hr {
 		font-weight: bold;
 		bottom: -1em;
 		color: $blue;
+		font-size: .8em;
 		background: $white;
+		text-transform: uppercase;
+		letter-spacing: 2px
 	}
 }
 
@@ -240,8 +252,8 @@ hr {
 		display: block;
 		text-align: center;
 		line-height: 1;
-		font-size: 3em;
-		color: $blue;
+		font-size: 2em;
+		color: $black;
 		margin-bottom: .8em;
 	}
 }
@@ -254,9 +266,8 @@ hr {
 .bottom-border {
 	height: 3em;
 	width: 100%;
-	background: url("../images/tile.png");
+	//background: url("../images/tile.png");
 	background-attachment: fixed;
-	border-bottom: 12px solid $blue;
 }
 
 @media screen and (max-width: 1024px) {
